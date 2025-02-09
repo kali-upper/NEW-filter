@@ -14,7 +14,6 @@ function addYouTubeVideo(videoId, title, containerId) {
     `;
     document.querySelector(`#${containerId}`).innerHTML += videoCard;
 }
-
 function toggleTheaterMode(button) {
     const videoCard = button.closest('.video-card');
     videoCard.classList.toggle('theater-mode');
@@ -23,31 +22,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const themeToggleButton = document.getElementById("theme-toggle");
     const themeIcon = document.getElementById("theme-icon");
 
-    // Check if dark mode is enabled in localStorage
     if (localStorage.getItem("theme") === "dark") {
         document.body.classList.add("dark-mode");
-        themeIcon.textContent = "🌞"; // Day icon (sun)
+        themeIcon.textContent = "🌞";
     } else {
         document.body.classList.add("light-mode");
-        themeIcon.textContent = "🌙"; // Night icon (moon)
+        themeIcon.textContent = "🌙";
     }
 
-    // Event listener for the theme toggle button
     themeToggleButton.addEventListener("click", () => {
         document.body.classList.toggle("dark-mode");
         document.body.classList.toggle("light-mode");
 
-        // Update the icon and save the theme preference
         if (document.body.classList.contains("dark-mode")) {
-            themeIcon.textContent = "🌞"; // Day icon
+            themeIcon.textContent = "🌞";
             localStorage.setItem("theme", "dark");
         } else {
-            themeIcon.textContent = "🌙"; // Night icon
+            themeIcon.textContent = "🌙";
             localStorage.setItem("theme", "light");
         }
     });
 });
-
 document.addEventListener("DOMContentLoaded", () => {
     const uploadInput = document.getElementById("upload-video");
     const uploadButton = document.getElementById("custom-upload-button");
@@ -62,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
             addUploadedVideo(videoUrl, file.name);
         }
     });
-
     function addUploadedVideo(videoUrl, videoName) {
         const videoCard = `
             <div class="video-card">
@@ -94,14 +88,13 @@ document.addEventListener("DOMContentLoaded", () => {
         allVideos.forEach((videoCard) => {
             const title = videoCard.querySelector(".video-title").textContent.toLowerCase();
             if (title.includes(searchQuery)) {
-                videoCard.style.display = "block";  // يظهر الفيديو إذا تطابق
+                videoCard.style.display = "block";
                 found = true;
             } else {
-                videoCard.style.display = "none";  // يخفي الفيديو إذا لم يتطابق
+                videoCard.style.display = "none";
             }
         });
 
-        // إذا لم يتم العثور على فيديوهات
         if (!found) {
             alert("لم يتم العثور على فيديوهات تطابق البحث.");
         }
