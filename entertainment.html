@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Filter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- رأس الصفحة -->
+    <header>
+        <h1>فيديوهات ترفيهية</h1>
+        <a href="index.html">العودة إلى الصفحة الرئيسية</a>
+        <button id="theme-toggle">
+            <span id="theme-icon">🌙</span>
+        </button>
+        <button id="back-to-top">↑ Top</button>
+                <!-- مربع البحث -->
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="ابحث عن فيديو..." class="search-input">
+                    <button id="search-button" class="search-button">بحث</button>
+                    </div>
+    </header>
+
+    <div class="container" id="entertainment-container"></div>
+
+    <script src="script.js"></script>
+    <script>
+        addYouTubeVideo("iK7OYxaRtv0", "فيديو ترفيهي مضحك", "entertainment-container");
+        addYouTubeVideo("rK5E9w4z4nQ", "ليه الطيارة متقفش في الجو وتستنى الارض تلف تحتها", "entertainment-container");
+        addYouTubeVideo("", "", "entertainment-container");
+    </script>
+</body>
+</html>

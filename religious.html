@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فيديوهات دينية - مكتبة يوتيوب</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- رأس الصفحة -->
+    <header>
+        <h1>فيديوهات دينية</h1>
+        <a href="index.html">العودة إلى الصفحة الرئيسية</a>
+        <button id="theme-toggle">
+            <span id="theme-icon">🌙</span>
+        </button>
+        <button id="back-to-top">↑ Top</button>
+                <!-- مربع البحث -->
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="ابحث عن فيديو..." class="search-input">
+                    <button id="search-button" class="search-button">بحث</button>
+                    </div>
+    </header>
+
+    <div class="container" id="religious-container"></div>
+
+    <script src="script.js"></script>
+    <script>
+        addYouTubeVideo("Nf032tXh3J0", "هل في وسائل ترفيه حلال ؟؟ مع أمثلة ", "religious-container");
+        addYouTubeVideo("IsoBhxF-wVo", "إياك والحزن والإحباط - الشيخ خالد الراشد", "religious-container");
+    </script>
+</body>
+</html>
